@@ -106,6 +106,7 @@
 
 <form>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js">
     <h2>👾☣𝗛𝗔𝗖𝗞𝗜𝗡𝗚 𝗘 𝗧𝗘𝗖𝗛𝗡𝗢𝗟𝗢𝗚𝗬☣👾</h2>
 
     <div class="question">
@@ -282,43 +283,34 @@
     </div>
 
     <button type="button" onclick="gerarPDF()">Enviar Questionário</button>
-</form>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js">
+    </form>
+<script>
     async function gerarPDF() {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
-
         // Definindo cores
         const backgroundColor = '#0d0d0d'; // Fundo escuro
         const textColor = '#800080'; // Roxo neon
         const titleColor = '#9b59b6'; // Roxo claro
-
         // Desenhando um fundo
         doc.setFillColor(13, 13, 13); // Cor de fundo
         doc.rect(0, 0, doc.internal.pageSize.width, doc.internal.pageSize.height, 'F');
-
         // Título
         doc.setTextColor(titleColor);
         doc.setFontSize(22);
         doc.text('Respostas do Questionário', 10, 20);
-
         // Captura os dados do formulário
         const formData = new FormData(document.getElementById('questionario'));
         let content = '';
-
         formData.forEach((value, key) => {
             content += `${key}: ${value}\n`;
         });
-
         // Configurações do texto
         doc.setTextColor(textColor);
         doc.setFontSize(12);
         doc.text(content, 10, 30);
-
         // Salva o PDF
         const pdfOutput = doc.output('blob');
-
         // Cria um link temporário para download
         const url = URL.createObjectURL(pdfOutput);
         const link = document.createElement('a');
@@ -327,9 +319,7 @@
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-
         alert('PDF gerado! Agora você pode enviar o arquivo para o WhatsApp.');
-
         // Aqui você pode abrir o WhatsApp Web, mas o envio do PDF deve ser manual
         const whatsappLink = `https://wa.me/5531991365558?text=Eu%20completei%20o%20questionário%20LØS.%20Aqui%20está%20o%20PDF%20gerado.%20Por%20favor%20envie-o%20para%20mim.`;
         window.open(whatsappLink, '_blank');
