@@ -306,8 +306,10 @@
         const formData = new FormData(document.getElementById('questionario'));
         let content = '';
 
+        // Organizando as perguntas e respostas
         formData.forEach((value, key) => {
-            content += `${key}: ${value}\n`;
+            content += `\n\n\n${key}:\n`;
+            content += `\t${value}\n`; // Adiciona uma tabulação para as respostas
         });
 
         // Adicione este console.log para verificar o conteúdo
@@ -316,7 +318,20 @@
         // Configurações do texto
         doc.setTextColor(textColor);
         doc.setFontSize(12);
-        doc.text(content, 10, 30);
+        
+        // Quebrar o texto em múltiplas linhas
+        const pageHeight = doc.internal.pageSize.height;
+        let y = 30; // Posição inicial Y
+        const lineHeight = 10; // Altura da linha
+
+        content.split('\n').forEach((line) => {
+            if (y > pageHeight - lineHeight) {
+                doc.addPage(); // Adiciona uma nova página se necessário
+                y = 10; // Reinicia a posição Y
+            }
+            doc.text(line, 10, y);
+            y += lineHeight; // Move para a próxima linha
+        });
 
         // Salva o PDF
         const pdfOutput = doc.output('blob');
