@@ -281,7 +281,7 @@
 </form>
 
 <script>
-    async function gerarPDF() {
+    async function gerarPDF(README.md) {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
         
