@@ -292,14 +292,17 @@
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
 
-        // Define a cor de fundo e do texto
-        doc.setFillColor(20, 20, 30); // Cor de fundo (escura)
-        doc.rect(0, 0, 210, 297, 'F'); // Preenche o fundo
+        // Função para configurar a página
+        function setupPage() {
+            // Define a cor de fundo e do texto
+            doc.setFillColor(20, 20, 30); // Cor de fundo (escura)
+            doc.rect(0, 0, 210, 297, 'F'); // Preenche o fundo
 
-        // Adiciona um título
-        doc.setTextColor(255, 0, 255); // Cor do texto roxa
-        doc.setFontSize(22);
-        doc.text('Respostas do Questionário', 10, 20); // Ajuste a posição do título
+            // Adiciona um título
+            doc.setTextColor(255, 0, 255); // Cor do texto roxa
+            doc.setFontSize(22);
+            doc.text('Respostas do Questionário', 10, 20); // Ajuste a posição do título
+        }
 
         // Captura os dados do formulário
         const formData = new FormData(document.getElementById('questionario'));
@@ -311,7 +314,8 @@
             // Verifica se a posição y está perto do final da página
             if (y >= pageHeight) {
                 doc.addPage(); // Adiciona uma nova página
-                y = 20; // Reinicia a posição y
+                setupPage(); // Configura a nova página
+                y = 40; // Reinicia a posição y
             }
 
             // Adiciona pergunta
