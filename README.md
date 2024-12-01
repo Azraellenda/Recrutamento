@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
+    <!DOCTYPE html><html lang="pt-BR"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questionário LØS</title>
@@ -36,10 +36,9 @@
             margin-top: 10px;
         }
     </style>
-</head>
-<body>
-
-<form id="questionario">
+    </head>
+    <body>
+    <form id="questionario">
       <style>
         body {
             font-family: 'Courier New', Courier, monospace;
@@ -95,17 +94,16 @@
             box-shadow: 0 0 10px rgba(128, 0, 128, 0.5); /* Sombra roxa */
             transition: background-color 0.3s, transform 0.3s;
         }
-        button:hover {
-            background-color: #6a006a; /* Roxo mais escuro ao passar o mouse */
-            transform: scale(1.05); /* Efeito de aumento */
+          button:hover {
+              background-color: #6a006a; /* Roxo mais escuro ao passar o mouse */
+              transform: scale(1.05); /* Efeito de aumento */
         }
-    </style>
+      </style>
 </head>
-<body>
-
-<h1>☪QUESTIONAÁRIO LØS☪</h1>
-
-<form>
+    <body>
+    
+    <h1>☪QUESTIONAÁRIO LØS☪</h1>
+    <form>
 
     <h2>👾☣𝗛𝗔𝗖𝗞𝗜𝗡𝗚 𝗘 𝗧𝗘𝗖𝗛𝗡𝗢𝗟𝗢𝗚𝗬☣👾</h2>
 
@@ -283,8 +281,8 @@
     </div>
 
     <button type="button" onclick="gerarPDF()">Enviar Questionário</button>
-</form>
-<script>
+    </form>
+    <script>
     async function gerarPDF() {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
@@ -315,4 +313,6 @@
         const whatsappLink = `https://wa.me/5531991365558?text=Eu%20completei%20o%20questionário%20LØS.%20Aqui%20está%20o%20PDF%20gerado.%20Por%20favor%20envie-o%20para%20mim.`;
         window.open(whatsappLink, '_blank');
     }
-</script></body></html>
+    </script>
+    </body>
+    </html>
