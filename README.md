@@ -282,7 +282,7 @@
     </div>
 
     <button type="button" onclick="gerarPDF()">Enviar Questionário</button>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 <script>
     async function gerarPDF() {
         const { jsPDF } = window.jspdf;
@@ -309,6 +309,9 @@
         formData.forEach((value, key) => {
             content += `${key}: ${value}\n`;
         });
+
+        // Adicione este console.log para verificar o conteúdo
+        console.log(content);
 
         // Configurações do texto
         doc.setTextColor(textColor);
