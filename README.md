@@ -293,7 +293,7 @@
         const doc = new jsPDF();
         
         // Adiciona um espaço para a imagem (substitua 'sua-imagem.jpg' pelo caminho da sua imagem)
-        const imgPath = 'sua-imagem.jpg'; // Adicione o caminho da sua imagem aqui
+        const imgPath = 'https://i.im.ge/2024/12/01/zSnnWK.1001323750.jpeg'; // Adicione o caminho da sua imagem aqui
         const img = new Image();
         img.src = imgPath;
 
