@@ -284,8 +284,7 @@
     <button type="button" onclick="gerarPDF()">Enviar Questionário</button>
 </form>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-<script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js">
     async function gerarPDF() {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
