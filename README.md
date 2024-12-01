@@ -36,7 +36,6 @@
             margin-top: 10px;
         }
     </style>
-</head>
 <body>
 
 <form id="questionario">
@@ -100,7 +99,6 @@
             transform: scale(1.05); /* Efeito de aumento */
         }
     </style>
-</head>
 <body>
 <h1>☪QUESTIONAÁRIO LØS☪</h1>
 <form>
