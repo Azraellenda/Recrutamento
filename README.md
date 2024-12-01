@@ -36,6 +36,10 @@
         .checkbox-group {
             margin-top: 10px;
         }
+        @media print {
+    .page-break {
+        page-break-after: always;
+    }
     </style>
 </head>
 <body>
@@ -106,7 +110,7 @@
 
 <form>
 <body>
-    <h2>👾☣𝗛𝗔𝗖𝗞𝗜𝗡𝗚 𝗘 𝗧𝗘𝗖𝗛𝗡𝗢𝗟𝗢𝗚𝗬☣👾</h2>
+    <h2 class="page-break">👾☣𝗛𝗔𝗖𝗞𝗜𝗡𝗚 𝗘 𝗧𝗘𝗖𝗛𝗡𝗢𝗟𝗢𝗚𝗬☣👾</h2>
 
     <div class="question">
         <strong>1° O que é um hacker?</strong>
@@ -158,7 +162,7 @@
         <textarea name="innovation_idea" placeholder="R="></textarea>
     </div>
 
-    <h2>🔎⎙PROGRAMAÇÃO E ANALISE⎙🔎</h2>
+    <h2 class="page-break">🔎⎙PROGRAMAÇÃO E ANALISE⎙🔎</h2>
 
     <div class="question">
         <strong>1° Você sabe o que é programação?</strong>
@@ -216,7 +220,7 @@
         <textarea name="programming_vs_analyst" placeholder="R="></textarea>
     </div>
 
-    <h2>⸙MARKETING E NEGOCIAÇŌES⸙</h2>
+    <h2 class="page-break">⸙MARKETING E NEGOCIAÇŌES⸙</h2>
 
     <div class="question">
         <strong>1° O que é o Marketing?</strong>
@@ -268,7 +272,7 @@
         <textarea name="marketing_business_plan" placeholder="R="></textarea>
     </div>
 
-    <h2>ENCERROU MEUS PARABÉNS 😉🔥</h2>
+    <h2 class="page-break">ENCERROU MEUS PARABÉNS 😉🔥</h2>
     <p>Lembre-se, responda só o que souber, não é necessário responder todas as perguntas se acaso não souber sobre o assunto.</p>
     <p>Desejo boa sorte e que você tenha um bom desempenho nesse questionário.</p>
     <p>Compartilhar nosso grupo também consta como ponto, então nos ajude assim você ganhará credibilidade com a gente!</p>
@@ -282,106 +286,39 @@
     </div>
 
     <button type="button" onclick="gerarPDF()">Enviar Questionário</button>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 <script>
-    async function gerarPDF() {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
+    function gerarPDF() {
+        const alunoNome = document.querySelector('input[name="student_name"]').value;
+        const form = document.querySelector('form');
+        const questions = form.querySelectorAll('div.question');
+        const pdf = new jsPDF('p', 'pt', 'a4');
+        let pageHeight = pdf.internal.pageSize.height;
+        let y = 60;
 
-        // Definindo cores
-        const backgroundColor = '#0d0d0d'; // Fundo escuro
-        const textColor = '#800080'; // Roxo neon
-        const titleColor = '#9b59b6'; // Roxo claro
+        questions.forEach((question, index) => {
+            const questionText = question.querySelector('strong').innerText;
+            const answerText = question.querySelector('textarea, input').value;
 
-        // Desenhando um fundo
-        doc.setFillColor(13, 13, 13); // Cor de fundo
-        doc.rect(0, 0, doc.internal.pageSize.width, doc.internal.pageSize.height, 'F');
+            if (y > pageHeight - 40) {
+                pdf.addPage();
+                y = 60;
+            }
 
-        // Espaço para a imagem
-        const imageHeight = 40; // Altura da imagem
-        const imageYPosition = 10; // Posição Y para a imagem
-        const imageXPosition = (doc.internal.pageSize.width / 2) - 50; // Centraliza a imagem
+            pdf.text(questionText, 50, y);
+            pdf.text(answerText, 150, y);
 
-        // Título
-        doc.setTextColor(titleColor);
-        doc.setFontSize(22);
-        doc.text('Respostas do Questionário', 10, imageYPosition + imageHeight + 10); // Posição abaixo da imagem
+            y += 20;
 
-        // Captura os dados do formulário
-        const formData = new FormData(document.getElementById('questionario'));
-        let questionsAndAnswers = {
-            "hacker_def": "Definição de Hacker:",
-            "hacker_what": "O que é um Hacker?",
-            "hacker_capacity": "Capacidades de um Hacker:",
-            "hacking_knowledge": "Conhecimento em Hacking:",
-            "hacking_intent": "Intenção ao Hackear:",
-            "technology_opinion": "Opinião sobre Tecnologia:",
-            "technology_help": "Tecnologia ajuda?",
-            "resources": "Recursos utilizados:",
-            "screenshot_instruction": "Instruções para Captura de Tela:",
-            "innovation_idea": "Ideia de Inovação:",
-            "programming_definition": "Definição de Programação:",
-            "programming_purpose": "Propósito da Programação:",
-            "programming_knowledge": "Conhecimento em Programação:",
-            "programming_languages": "Linguagens de Programação:",
-            "programming_creation": "Criação em Programação:",
-            "importance_analysis": "Análise de Importância:",
-            "analysis_identification": "Identificação na Análise:",
-            "bug_bounty_opinion": "Opinião sobre Bug Bounty:",
-            "programming_vs_analyst": "Programação vs Analista:",
-            "marketing_definition": "Definição de Marketing:",
-            "marketing_purpose": "Propósito do Marketing:",
-            "marketing_function": "Função do Marketing:",
-            "marketing_understanding": "Entendimento de Marketing:",
-            "marketing_opinion": "Opinião sobre Marketing:",
-            "negotiation_understanding": "Entendimento de Negociação:",
-            "negotiation_interest": "Interesse em Negociação:",
-            "negotiation_strategy": "Estratégia de Negociação:",
-            "digital_marketing_popularity": "Popularidade do Marketing Digital:",
-            "marketing_business_plan": "Plano de Negócios de Marketing:",
-            "student_name": "Nome do Aluno:"
-        };
-
-        // Organizando as perguntas e respostas
-        let content = '';
-        formData.forEach((value, key) => {
-            if (questionsAndAnswers[key]) {
-                content += `${questionsAndAnswers[key]}\n`; // Pergunta
-                content += `Resposta: ${value}\n\n`; // Resposta
+            if (index < questions.length - 1 && question.nextElementSibling.tagName === 'H2') {
+                pdf.addPage();
+                y = 60;
             }
         });
 
-        // Adicione este console.log para verificar o conteúdo
-        console.log(content);
+        pdf.save(`${alunoNome} - Questionário LØS.pdf`);
+    }
 
-        // Configurações do texto
-        doc.setTextColor(textColor);
-        doc.setFontSize(12);
-        
-        // Quebrar o texto em múltiplas linhas
-        const pageHeight = doc.internal.pageSize.height;
-        let y = imageYPosition + imageHeight + 30; // Posição inicial Y abaixo do título
-        const lineHeight = 10; // Altura da linha
-
-        content.split('\n').forEach((line) => {
-            if (y > pageHeight - lineHeight) {
-                doc.addPage(); // Adiciona uma nova página se necessário
-                y = 10; // Reinicia a posição Y
-            }
-            doc.text(line, 10, y);
-            y += lineHeight; // Move para a
-
-        // Salva o PDF
-        const pdfOutput = doc.output('blob');
-
-        // Cria um link temporário para download
-        const url = URL.createObjectURL(pdfOutput);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = 'questionario.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+    document.querySelector('button[type="button"]').addEventListener('click', gerarPDF);
 
         alert('PDF gerado! Agora você pode enviar o arquivo para o WhatsApp.');
 
