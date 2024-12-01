@@ -207,7 +207,7 @@
             <label><input type="checkbox"> Deve desligar o seu telefone ou computador para não ter problemas.</label><br>
             <label><input type="checkbox"> Deve apagar tudo e resetar o computador ou telefone.</label><br>
             <label><input type="checkbox"> Ele tem que identificar o erro e consertá-lo pois essa é a obrigação dele.</label><br>
-            <label><input type="checkbox"> eve chamar o dono da empresa pra analisar.</label><br>
+            <label><input type="checkbox"> Deve chamar o dono da empresa pra analisar.</label><br>
             <label><input type="checkbox"> Fazer identificação do erro e fornecer o diretório e localização do erro para os programadores e responsáveis pela criação do site.</label>
         </div>
     </div>
