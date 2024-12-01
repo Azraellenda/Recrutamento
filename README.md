@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+<!DOCTYPE html><html lang="pt-BR"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questionário LØS</title>
@@ -286,7 +284,6 @@
 
     <button type="button" onclick="gerarPDF()">Enviar Questionário</button>
 </form>
-
 <script>
     async function gerarPDF() {
         const { jsPDF } = window.jspdf;
@@ -318,7 +315,4 @@
         const whatsappLink = `https://wa.me/5531991365558?text=Eu%20completei%20o%20questionário%20LØS.%20Aqui%20está%20o%20PDF%20gerado.%20Por%20favor%20envie-o%20para%20mim.`;
         window.open(whatsappLink, '_blank');
     }
-</script>
-
-</body>
-</html>
+</script></body></html>
