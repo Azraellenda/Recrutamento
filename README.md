@@ -292,7 +292,7 @@
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
         
-        // Adiciona um espaço para a imagem (substitua 'sua-imagem.jpg' pelo caminho da sua imagem)
+        // Adiciona um espaço para a imagem (substitua pelo caminho da sua imagem)
         const imgPath = 'https://i.im.ge/2024/12/01/zSnnWK.1001323750.jpeg'; // Adicione o caminho da sua imagem aqui
         const img = new Image();
         img.src = imgPath;
@@ -336,6 +336,10 @@
             // Aqui você pode abrir o WhatsApp Web, mas o envio do PDF deve ser manual
             const whatsappLink = `https://wa.me/5531991365558?text=Eu%20completei%20o%20questionário%20LØS.%20Aqui%20está%20o%20PDF%20gerado.%20Por%20favor%20envie-o%20para%20mim.`;
             window.open(whatsappLink, '_blank');
+        };
+
+        img.onerror = () => {
+            alert('Erro ao carregar a imagem. Verifique o URL da imagem.');
         };
     }
 </script>
