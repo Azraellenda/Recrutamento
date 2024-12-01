@@ -106,7 +106,6 @@
 
 <form>
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js">
     <h2>👾☣𝗛𝗔𝗖𝗞𝗜𝗡𝗚 𝗘 𝗧𝗘𝗖𝗛𝗡𝗢𝗟𝗢𝗚𝗬☣👾</h2>
 
     <div class="question">
@@ -283,8 +282,8 @@
     </div>
 
     <button type="button" onclick="gerarPDF()">Enviar Questionário</button>
-    </form>
-<script>
+</form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js">
     async function gerarPDF() {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
@@ -324,5 +323,5 @@
         const whatsappLink = `https://wa.me/5531991365558?text=Eu%20completei%20o%20questionário%20LØS.%20Aqui%20está%20o%20PDF%20gerado.%20Por%20favor%20envie-o%20para%20mim.`;
         window.open(whatsappLink, '_blank');
     }
-</script>
+    </script>
 </body>
