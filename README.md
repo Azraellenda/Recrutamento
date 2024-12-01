@@ -286,48 +286,56 @@
     </div>
 
     <button type="button" onclick="gerarPDF()">Enviar Questionário</button>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script>
-        async function gerarPDF() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script>
+    async function gerarPDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
 
-            // Define a cor de fundo e do texto
-            doc.setFillColor(20, 20, 30); // Cor de fundo (escura)
-            doc.rect(0, 0, 210, 297, 'F'); // Preenche o fundo
+        // Define a cor de fundo e do texto
+        doc.setFillColor(20, 20, 30); // Cor de fundo (escura)
+        doc.rect(0, 0, 210, 297, 'F'); // Preenche o fundo
 
-            // Adiciona um título
-            doc.setTextColor(255, 0, 255); // Cor do texto roxa
-            doc.setFontSize(22);
-            doc.text('Respostas do Questionário', 10, 20); // Ajuste a posição do título
+        // Adiciona um título
+        doc.setTextColor(255, 0, 255); // Cor do texto roxa
+        doc.setFontSize(22);
+        doc.text('Respostas do Questionário', 10, 20); // Ajuste a posição do título
 
-            // Captura os dados do formulário
-            const formData = new FormData(document.getElementById('questionario'));
-            let y = 40; // Posição inicial para as perguntas e respostas
+        // Captura os dados do formulário
+        const formData = new FormData(document.getElementById('questionario'));
+        let y = 40; // Posição inicial para as perguntas e respostas
+        const lineHeight = 10; // Altura da linha
+        const pageHeight = 297 - 20; // Altura da página - margem
 
-            formData.forEach((value, key) => {
-                // Adiciona perguntas e respostas
-                doc.setFontSize(14);
-                doc.setTextColor(255, 255, 255); // Cor do texto branca
-                doc.text(`${key}: ${value}`, 10, y);
-                y += 10; // Incrementa a posição y para a próxima linha
-            });
+        formData.forEach((value, key) => {
+            // Verifica se a posição y está perto do final da página
+            if (y >= pageHeight) {
+                doc.addPage(); // Adiciona uma nova página
+                y = 20; // Reinicia a posição y
+            }
 
-            // Salva o PDF
-            const pdfOutput = doc.output('blob');
-            const url = URL.createObjectURL(pdfOutput);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'questionario.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            // Adiciona perguntas e respostas
+            doc.setFontSize(14);
+            doc.setTextColor(255, 255, 255); // Cor do texto branca
+            doc.text(`${key}: ${value}`, 10, y);
+            y += lineHeight; // Incrementa a posição y para a próxima linha
+        });
 
-            alert('PDF gerado! Agora você pode enviar o arquivo para o WhatsApp.');
+        // Salva o PDF
+        const pdfOutput = doc.output('blob');
+        const url = URL.createObjectURL(pdfOutput);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'questionario.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
 
-            // Aqui você pode abrir o WhatsApp Web, mas o envio do PDF deve ser manual
-            const whatsappLink = `https://wa.me/5531991365558?text=Eu%20completei%20o%20questionário%20LØS.%20Aqui%20está%20o%20PDF%20gerado.%20Por%20favor%20envie-o%20para%20mim.`;
-            window.open(whatsappLink, '_blank');
-        }
-        </script>
+        alert('PDF gerado! Agora você pode enviar o arquivo para o WhatsApp.');
+
+        // Aqui você pode abrir o WhatsApp Web, mas o envio do PDF deve ser manual
+        const whatsappLink = `https://wa.me/5531991365558?text=Eu%20completei%20o%20questionário%20LØS.%20Aqui%20está%20o%20PDF%20gerado.%20Por%20favor%20envie-o%20para%20mim.`;
+        window.open(whatsappLink, '_blank');
+    }
+</script>
 </body>
