@@ -276,8 +276,8 @@
         <strong>Nome do Aluno:</strong>
         <input type="text" name="student_name" placeholder="Digite seu nome" required>
     </div>
-    <script>
-    async function gerarPDF() {
+        <script>
+    async function gerarPDF(README.md) {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
         
@@ -306,7 +306,6 @@
         // Aqui você pode abrir o WhatsApp Web, mas o envio do PDF deve ser manual
         const whatsappLink = `https://wa.me/5531991365558?text=Eu%20completei%20o%20questionário%20LØS.%20Aqui%20está%20o%20PDF%20gerado.%20Por%20favor%20envie-o%20para%20mim.`;
         window.open(whatsappLink, '_blank');
-        
     <button type="button" onclick="gerarPDF()">Enviar Questionário</button>
 </forum>
 </script>
