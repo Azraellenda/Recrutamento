@@ -291,56 +291,43 @@
     async function gerarPDF() {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
-        
-        // Adiciona um espaço para a imagem (substitua pelo caminho da sua imagem)
-        const imgPath = 'https://i.im.ge/2024/12/01/zSnnWK.1001323750.jpeg'; // Adicione o caminho da sua imagem aqui
-        const img = new Image();
-        img.src = imgPath;
 
-        img.onload = () => {
-            doc.addImage(img, 'JPEG', 10, 10, 190, 100); // Ajuste a posição e o tamanho da imagem
+        // Define a cor de fundo e do texto
+        doc.setFillColor(20, 20, 30); // Cor de fundo (escura)
+        doc.rect(0, 0, 210, 297, 'F'); // Preenche o fundo
 
-            // Define a cor de fundo e do texto
-            doc.setFillColor(20, 20, 30); // Cor de fundo (escura)
-            doc.rect(0, 0, 210, 297, 'F'); // Preenche o fundo
+        // Adiciona um título
+        doc.setTextColor(255, 0, 255); // Cor do texto roxa
+        doc.setFontSize(22);
+        doc.text('Respostas do Questionário', 10, 20); // Ajuste a posição do título
 
-            // Adiciona um título
-            doc.setTextColor(255, 0, 255); // Cor do texto roxa
-            doc.setFontSize(22);
-            doc.text('Respostas do Questionário', 10, 120);
+        // Captura os dados do formulário
+        const formData = new FormData(document.getElementById('questionario'));
+        let y = 40; // Posição inicial para as perguntas e respostas
 
-            // Captura os dados do formulário
-            const formData = new FormData(document.getElementById('questionario'));
-            let y = 140; // Posição inicial para as perguntas e respostas
+        formData.forEach((value, key) => {
+            // Adiciona perguntas e respostas
+            doc.setFontSize(14);
+            doc.setTextColor(255, 255, 255); // Cor do texto branca
+            doc.text(`${key}: ${value}`, 10, y);
+            y += 10; // Incrementa a posição y para a próxima linha
+        });
 
-            formData.forEach((value, key) => {
-                // Adiciona perguntas e respostas
-                doc.setFontSize(14);
-                doc.setTextColor(255, 255, 255); // Cor do texto branca
-                doc.text(`${key}: ${value}`, 10, y);
-                y += 10; // Incrementa a posição y para a próxima linha
-            });
+        // Salva o PDF
+        const pdfOutput = doc.output('blob');
+        const url = URL.createObjectURL(pdfOutput);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'questionario.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
 
-            // Salva o PDF
-            const pdfOutput = doc.output('blob');
-            const url = URL.createObjectURL(pdfOutput);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'questionario.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+        alert('PDF gerado! Agora você pode enviar o arquivo para o WhatsApp.');
 
-            alert('PDF gerado! Agora você pode enviar o arquivo para o WhatsApp.');
-
-            // Aqui você pode abrir o WhatsApp Web, mas o envio do PDF deve ser manual
-            const whatsappLink = `https://wa.me/5531991365558?text=Eu%20completei%20o%20questionário%20LØS.%20Aqui%20está%20o%20PDF%20gerado.%20Por%20favor%20envie-o%20para%20mim.`;
-            window.open(whatsappLink, '_blank');
-        };
-
-        img.onerror = () => {
-            alert('Erro ao carregar a imagem. Verifique o URL da imagem.');
-        };
+        // Aqui você pode abrir o WhatsApp Web, mas o envio do PDF deve ser manual
+        const whatsappLink = `https://wa.me/5531991365558?text=Eu%20completei%20o%20questionário%20LØS.%20Aqui%20está%20o%20PDF%20gerado.%20Por%20favor%20envie-o%20para%20mim.`;
+        window.open(whatsappLink, '_blank');
     }
 </script>
 </body>
