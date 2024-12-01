@@ -297,19 +297,58 @@
         doc.setFillColor(13, 13, 13); // Cor de fundo
         doc.rect(0, 0, doc.internal.pageSize.width, doc.internal.pageSize.height, 'F');
 
+        // Espaço para a imagem
+        const imageHeight = 40; // Altura da imagem
+        const imageYPosition = 10; // Posição Y para a imagem
+        const imageXPosition = (doc.internal.pageSize.width / 2) - 50; // Centraliza a imagem
+
         // Título
         doc.setTextColor(titleColor);
         doc.setFontSize(22);
-        doc.text('Respostas do Questionário', 10, 20);
+        doc.text('Respostas do Questionário', 10, imageYPosition + imageHeight + 10); // Posição abaixo da imagem
 
         // Captura os dados do formulário
         const formData = new FormData(document.getElementById('questionario'));
-        let content = '';
+        let questionsAndAnswers = {
+            "hacker_def": "Definição de Hacker:",
+            "hacker_what": "O que é um Hacker?",
+            "hacker_capacity": "Capacidades de um Hacker:",
+            "hacking_knowledge": "Conhecimento em Hacking:",
+            "hacking_intent": "Intenção ao Hackear:",
+            "technology_opinion": "Opinião sobre Tecnologia:",
+            "technology_help": "Tecnologia ajuda?",
+            "resources": "Recursos utilizados:",
+            "screenshot_instruction": "Instruções para Captura de Tela:",
+            "innovation_idea": "Ideia de Inovação:",
+            "programming_definition": "Definição de Programação:",
+            "programming_purpose": "Propósito da Programação:",
+            "programming_knowledge": "Conhecimento em Programação:",
+            "programming_languages": "Linguagens de Programação:",
+            "programming_creation": "Criação em Programação:",
+            "importance_analysis": "Análise de Importância:",
+            "analysis_identification": "Identificação na Análise:",
+            "bug_bounty_opinion": "Opinião sobre Bug Bounty:",
+            "programming_vs_analyst": "Programação vs Analista:",
+            "marketing_definition": "Definição de Marketing:",
+            "marketing_purpose": "Propósito do Marketing:",
+            "marketing_function": "Função do Marketing:",
+            "marketing_understanding": "Entendimento de Marketing:",
+            "marketing_opinion": "Opinião sobre Marketing:",
+            "negotiation_understanding": "Entendimento de Negociação:",
+            "negotiation_interest": "Interesse em Negociação:",
+            "negotiation_strategy": "Estratégia de Negociação:",
+            "digital_marketing_popularity": "Popularidade do Marketing Digital:",
+            "marketing_business_plan": "Plano de Negócios de Marketing:",
+            "student_name": "Nome do Aluno:"
+        };
 
         // Organizando as perguntas e respostas
+        let content = '';
         formData.forEach((value, key) => {
-            content += `\n\n\n${key}:\n`;
-            content += `\t${value}\n`; // Adiciona uma tabulação para as respostas
+            if (questionsAndAnswers[key]) {
+                content += `${questionsAndAnswers[key]}\n`; // Pergunta
+                content += `Resposta: ${value}\n\n`; // Resposta
+            }
         });
 
         // Adicione este console.log para verificar o conteúdo
@@ -321,7 +360,7 @@
         
         // Quebrar o texto em múltiplas linhas
         const pageHeight = doc.internal.pageSize.height;
-        let y = 30; // Posição inicial Y
+        let y = imageYPosition + imageHeight + 30; // Posição inicial Y abaixo do título
         const lineHeight = 10; // Altura da linha
 
         content.split('\n').forEach((line) => {
@@ -330,8 +369,7 @@
                 y = 10; // Reinicia a posição Y
             }
             doc.text(line, 10, y);
-            y += lineHeight; // Move para a próxima linha
-        });
+            y += lineHeight; // Move para a
 
         // Salva o PDF
         const pdfOutput = doc.output('blob');
