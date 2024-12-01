@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js">
     <title>Questionário LØS</title>
     <style>
         body {
@@ -282,7 +283,7 @@
     </div>
 
     <button type="button" onclick="gerarPDF()">Enviar Questionário</button>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js">
+    <script>
         async function gerarPDF() {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
