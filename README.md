@@ -287,38 +287,29 @@
 
     <button type="button" onclick="gerarPDF()">Enviar Questionário</button>
 <script>
-    function gerarPDF() {
-        const alunoNome = document.querySelector('input[name="student_name"]').value;
-        const form = document.querySelector('form');
-        const questions = form.querySelectorAll('div.question');
-        const pdf = new jsPDF('p', 'pt', 'a4');
-        let pageHeight = pdf.internal.pageSize.height;
-        let y = 60;
+    async function gerarPDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        // Captura os dados do formulário
+        const formData = new FormData(document.getElementById('questionario'));
+        let content = 'Respostas do Questionário:\n\n';
 
-        questions.forEach((question, index) => {
-            const questionText = question.querySelector('strong').innerText;
-            const answerText = question.querySelector('textarea, input').value;
-
-            if (y > pageHeight - 40) {
-                pdf.addPage();
-                y = 60;
-            }
-
-            pdf.text(questionText, 50, y);
-            pdf.text(answerText, 150, y);
-
-            y += 20;
-
-            if (index < questions.length - 1 && question.nextElementSibling.tagName === 'H2') {
-                pdf.addPage();
-                y = 60;
-            }
+        formData.forEach((value, key) => {
+            content += `${key}: ${value}\n`;
         });
 
-        pdf.save(`${alunoNome} - Questionário LØS.pdf`);
-    }
+        doc.text(content, 10, 10);
+        const pdfOutput = doc.output('blob');
 
-    document.querySelector('button[type="button"]').addEventListener('click', gerarPDF);
+        // Cria um link temporário para download
+        const url = URL.createObjectURL(pdfOutput);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'questionario.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
 
         alert('PDF gerado! Agora você pode enviar o arquivo para o WhatsApp.');
 
