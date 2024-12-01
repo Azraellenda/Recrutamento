@@ -111,6 +111,7 @@
 <form>
 <body>
     <h2 class="page-break">👾☣𝗛𝗔𝗖𝗞𝗜𝗡𝗚 𝗘 𝗧𝗘𝗖𝗛𝗡𝗢𝗟𝗢𝗚𝗬☣👾</h2>
+    <p>Coloque respostas curtas e resumida para evitar possiveis bugs no PDF</p>
 
     <div class="question">
         <strong>1° O que é um hacker?</strong>
@@ -282,7 +283,7 @@
 
     <div class="question">
         <strong>Nome do Aluno:</strong>
-        <input type="text" name="student_name" placeholder="Digite seu nome" required>
+        <input type="text" name="Nome do Aluno:" placeholder="Digite seu nome" required>
     </div>
 
     <button type="button" onclick="gerarPDF()">Enviar Questionário</button>
@@ -295,7 +296,7 @@
         // Função para configurar a página
         function setupPage() {
             // Define a cor de fundo e do texto
-            doc.setFillColor(20, 20, 30); // Cor de fundo (escura)
+            doc.setFillColor(0, 0, 0); // Cor de fundo (preto)
             doc.rect(0, 0, 210, 297, 'F'); // Preenche o fundo
 
             // Adiciona um título
@@ -303,6 +304,9 @@
             doc.setFontSize(22);
             doc.text('Respostas do Questionário', 10, 20); // Ajuste a posição do título
         }
+
+        // Configura a primeira página
+        setupPage();
 
         // Captura os dados do formulário
         const formData = new FormData(document.getElementById('questionario'));
