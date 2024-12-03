@@ -151,11 +151,7 @@
 
     <div class="question">
         <strong>8° Me forneça 5 sites, 3 inteligências artificiais, 2 aplicativos, que podem auxiliar as pessoas em tarefas do dia a dia.</strong>
-        <textarea name="8° Me forneça 5 sites,
-        3 inteligências artificiais, 
-        2 aplicativos,
-        que podem auxiliar as pessoas em tarefas 
-        do dia a dia" placeholder="R="></textarea>
+        <textarea name="8°Os 5 sites, 3 Inteligência artificial e os 2 app do Fornecido do aluno" placeholder="R="></textarea>
     </div>
 
     <div class="question">
@@ -165,9 +161,7 @@
 
     <div class="question">
         <strong>10° Se você tivesse capacidade de criar algo inovador e tecnológico o que seria? (Descreva em detalhes.)</strong>
-        <textarea name="10° Se você tivesse capacidade
-        de criar algo inovador
-        e tecnológico o que seria" placeholder="R="></textarea>
+        <textarea name="10° O que aluno criaria se fosse criar algo tecnológico" placeholder="R="></textarea>
     </div>
 
     <h2 class="page-break">🔎⎙PROGRAMAÇÃO E ANALISE⎙🔎</h2>
@@ -189,16 +183,12 @@
 
     <div class="question">
         <strong>4° Você sabe o que é linguagem de programação? Me dê o nome de 5 linguagens de programação.</strong>
-        <textarea name="4° Você sabe o que é linguagem de programação? 
-        Me dê o nome de 5 linguagens de programação" placeholder="R="></textarea>
+        <textarea name="4° As linguagens e resposta da numero 4 segundo tópico" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>5° Você sabia que o sistema operacional do seu telefone é um programa? Se pudesse criar algo na programação, o que seria?</strong>
-        <textarea name="5° Você sabia que o sistema operacional 
-        do seu telefone é um programa? 
-        Se pudesse criar algo na programação, 
-        o que seria" placeholder="R="></textarea>
+        <textarea name="5° O que o aluno criaria de inovador na área de programação" placeholder="R="></textarea>
     </div>
 
     <div class="question">
@@ -208,18 +198,12 @@
 
     <div class="question">
         <strong>7° Dentro de um processo de análise em um arquivo programado o que podemos identificar?</strong>
-        <textarea name="7° Dentro de um processo de análise 
-        em um arquivo programado 
-        o que podemos identificar" placeholder="R="></textarea>
+        <textarea name="7° O que o aluno identificaria em um processo de analise" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>8° Na sua opinião, o que gostaria de analisar na área de BUG-BOUNTY e quanto você acha que ganharia atuando nessa área?</strong>
-        <textarea name="8° Na sua opinião, 
-        o que gostaria de 
-        analisar na área de BUG-BOUNTY e quanto você 
-        acha que ganharia atuando 
-        nessa área" placeholder="R="></textarea>
+        <textarea name="8° O que ela gostaria de analisar em BUG-BOUNTY e quanto ganharia" placeholder="R="></textarea>
     </div>
 
     <div class="question">
@@ -243,9 +227,7 @@
 
     <div class="question">
         <strong>10° Em sua opinião, qual você acha mais interessante *PROGRAMAÇÃO* ou *ANALISTA*? (Justifique sua resposta.)</strong>
-        <textarea name="10° Em sua opinião, qual você acha mais
-        interessante PROGRAMAÇÃO ou ANALISTA
-        Justifique sua resposta" placeholder="R="></textarea>
+        <textarea name="10° O que o aluno acha mais interessante ANALISTA OU PROGRAMAÇÃO" placeholder="R="></textarea>
     </div>
 
     <h2 class="page-break">⸙MARKETING E NEGOCIAÇŌES⸙</h2>
@@ -272,16 +254,12 @@
 
     <div class="question">
         <strong>5° Na sua opinião, o Marketing é uma boa área trabalhista e tem retorno lucrativo? Por que?</strong>
-        <textarea name="5° Na sua opinião, o Marketing é uma boa área trabalhista
-        e tem retorno lucrativo? Por que" placeholder="R="></textarea>
+        <textarea name="5° Porque o Marketing e uma boa area de trabalho" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>6° Na área do Marketing é necessário que o profissional saiba negociar, o que você entende de negociação?</strong>
-        <textarea name="6° Na área do Marketing é
-        necessário que o profissional
-        saiba negociar, 
-        o que você entende de negociação" placeholder="R="></textarea>
+        <textarea name="6° O que o aluno entende sobre negociação" placeholder="R="></textarea>
     </div>
 
     <div class="question">
