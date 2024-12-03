@@ -144,7 +144,7 @@
     </div>
 
     <div class="question">
-        <strong>7° A tecnologia tem ajudado o mundo? Se sim, de que forma?</strong>
+        <strong>7° A tecnologia tem ajudado o mundo?Se sim, de que forma?</strong>
         <textarea name="7° A tecnologia tem ajudado o mundo,
         Se sim de que forma" placeholder="R="></textarea>
     </div>
@@ -221,8 +221,7 @@
         <strong>9°Quais caixas você marcou 
         responda,
         abaixo</strong>
-        <textarea name="9°Quais caixas você marcou responda,
-        abaixo" placeholder="R="></textarea>
+        <textarea name="9°Quais caixas você marcou responda,abaixo" placeholder="R="></textarea>
     </div>
 
     <div class="question">
