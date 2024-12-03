@@ -115,98 +115,115 @@
 
     <div class="question">
         <strong>1° O que é um hacker?</strong>
-        <textarea name="1° O que é um hacker:" placeholder="R="></textarea>
+        <textarea name="1° O que é um hacker" placeholder="R="></textarea>
     </div>
     
     <div class="question">
         <strong>2° O que ele faz?</strong>
-        <textarea name="2° O que ele faz:" placeholder="R="></textarea>
+        <textarea name="2° O que ele faz" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>3° Qual é a sua capacidade?</strong>
-        <textarea name="3°Qual é a sua capacidade:" placeholder="R="></textarea>
+        <textarea name="3°Qual é a sua capacidade" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>4° O que sabe sobre hacking?</strong>
-        <textarea name="4° O que sabe sobre hacking:" placeholder="R="></textarea>
+        <textarea name="4° O que sabe sobre hacking" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>5° O que pretende fazer com esse conhecimento?</strong>
-        <textarea name="5° O que pretende fazer com esse conhecimento:" placeholder="R="></textarea>
+        <textarea name="5° O que pretende fazer com esse conhecimento" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>6° O que é tecnologia? (dê a sua opinião.)</strong>
-        <textarea name="6° O que é tecnologia:" placeholder="R="></textarea>
+        <textarea name="6° O que é tecnologia" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>7° A tecnologia tem ajudado o mundo? Se sim, de que forma?</strong>
-        <textarea name="7° A tecnologia tem ajudado o mundo:" placeholder="R="></textarea>
+        <textarea name="7° A tecnologia tem ajudado o mundo,
+        Se sim de que forma" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>8° Me forneça 5 sites, 3 inteligências artificiais, 2 aplicativos, que podem auxiliar as pessoas em tarefas do dia a dia.</strong>
-        <textarea name="8° Me forneça 5 sites, 3 inteligências artificiais, 2 aplicativos, que podem auxiliar as pessoas em tarefas do dia a dia:" placeholder="R="></textarea>
+        <textarea name="8° Me forneça 5 sites,
+        3 inteligências artificiais, 
+        2 aplicativos,
+        que podem auxiliar as pessoas em tarefas 
+        do dia a dia" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>9° Você sabia que seu aparelho é algo tecnológico? Então vá em configurações do seu aparelho e lá entre em SISTEMA, clique diversas vezes em android e lá abrirá uma página, tire um print dessa página e nos mande.</strong>
-        <textarea name="9° Versão do Sistema OS do aparelho do aluno:" placeholder="R="></textarea>
+        <textarea name="9° Versão do Sistema OS do aparelho do aluno" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>10° Se você tivesse capacidade de criar algo inovador e tecnológico o que seria? (Descreva em detalhes.)</strong>
-        <textarea name="10° 10° Se você tivesse capacidade de criar algo inovador e tecnológico o que seria:" placeholder="R="></textarea>
+        <textarea name="10° Se você tivesse capacidade
+        de criar algo inovador
+        e tecnológico o que seria" placeholder="R="></textarea>
     </div>
 
     <h2 class="page-break">🔎⎙PROGRAMAÇÃO E ANALISE⎙🔎</h2>
 
     <div class="question">
         <strong>1° Você sabe o que é programação?</strong>
-        <textarea name="1° Você sabe o que é programação:" placeholder="R="></textarea>
+        <textarea name="1° Você sabe o que é programação" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>2° Pra quê serve?</strong>
-        <textarea name="2° Pra quê serve:" placeholder="R="></textarea>
+        <textarea name="2° Pra quê serve" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>3° O que podemos fazer com o conhecimento dentro dessa área?</strong>
-        <textarea name="3° O que podemos fazer com o conhecimento dentro dessa área:" placeholder="R="></textarea>
+        <textarea name="3° O que podemos fazer com o conhecimento dentro dessa área" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>4° Você sabe o que é linguagem de programação? Me dê o nome de 5 linguagens de programação.</strong>
-        <textarea name="4° Você sabe o que é linguagem de programação? Me dê o nome de 5 linguagens de programação:" placeholder="R="></textarea>
+        <textarea name="4° Você sabe o que é linguagem de programação? 
+        Me dê o nome de 5 linguagens de programação" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>5° Você sabia que o sistema operacional do seu telefone é um programa? Se pudesse criar algo na programação, o que seria?</strong>
-        <textarea name="5° Você sabia que o sistema operacional do seu telefone é um programa? Se pudesse criar algo na programação, o que seria:" placeholder="R="></textarea>
+        <textarea name="5° Você sabia que o sistema operacional 
+        do seu telefone é um programa? 
+        Se pudesse criar algo na programação, 
+        o que seria" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>6° Você sabe porque é importante ser analista com códigos, arquivos e sub-pastas?</strong>
-        <textarea name="6° Você sabe porque é importante ser analista com códigos, arquivos e sub-pastas:" placeholder="R="></textarea>
+        <textarea name="6° Você sabe porque é importante ser analista com códigos, arquivos e sub-pastas" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>7° Dentro de um processo de análise em um arquivo programado o que podemos identificar?</strong>
-        <textarea name="7° Dentro de um processo de análise em um arquivo programado o que podemos identificar:" placeholder="R="></textarea>
+        <textarea name="7° Dentro de um processo de análise 
+        em um arquivo programado 
+        o que podemos identificar" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>8° Na sua opinião, o que gostaria de analisar na área de BUG-BOUNTY e quanto você acha que ganharia atuando nessa área?</strong>
-        <textarea name="8° Na sua opinião, o que gostaria de analisar na área de BUG-BOUNTY e quanto você acha que ganharia atuando nessa área:" placeholder="R="></textarea>
+        <textarea name="8° Na sua opinião, 
+        o que gostaria de 
+        analisar na área de BUG-BOUNTY e quanto você 
+        acha que ganharia atuando 
+        nessa área" placeholder="R="></textarea>
     </div>
 
     <div class="question">
-        <strong>9° O que Ricardo deve fazer? (MARQUE COM ❌ PARA NÃO E MARQUE✅ PARA O QUE ELE DEVE FAZER)</strong>
+        <strong>9°Existe um erro no site da empresa dentro de algumas pastas e arquivo o que Ricardo deve fazer? (MARQUE SOMENTE AS CAIXAS QUE VOCÊ ACHAR QUE TA CERTA✅)</strong>
         <div class="checkbox-group">
             <label><input type="checkbox"> Deve desligar o seu telefone ou computador para não ter problemas.</label><br>
             <label><input type="checkbox"> Deve apagar tudo e resetar o computador ou telefone.</label><br>
@@ -217,40 +234,54 @@
     </div>
 
     <div class="question">
+        <strong>9°Quais caixas você marcou 
+        responda,
+        abaixo</strong>
+        <textarea name="9°Quais caixas você marcou responda,
+        abaixo" placeholder="R="></textarea>
+    </div>
+
+    <div class="question">
         <strong>10° Em sua opinião, qual você acha mais interessante *PROGRAMAÇÃO* ou *ANALISTA*? (Justifique sua resposta.)</strong>
-        <textarea name="10° Em sua opinião, qual você acha mais interessante PROGRAMAÇÃO ou ANALISTA Justifique sua resposta:" placeholder="R="></textarea>
+        <textarea name="10° Em sua opinião, qual você acha mais
+        interessante PROGRAMAÇÃO ou ANALISTA
+        Justifique sua resposta" placeholder="R="></textarea>
     </div>
 
     <h2 class="page-break">⸙MARKETING E NEGOCIAÇŌES⸙</h2>
 
     <div class="question">
         <strong>1° O que é o Marketing?</strong>
-        <textarea name="1° O que é o Marketing:" placeholder="R="></textarea>
+        <textarea name="1° O que é o Marketing" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>2° Pra que serve?</strong>
-        <textarea name="2° Pra que serve:" placeholder="R="></textarea>
+        <textarea name="2° Pra que serve" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>3° Como funciona?</strong>
-        <textarea name="3° Como funciona:" placeholder="R="></textarea>
+        <textarea name="3° Como funciona" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>4° O que você entende sobre o assunto? (Me dê detalhes.)</strong>
-        <textarea name="4° O que você entende sobre o assunto:" placeholder="R="></textarea>
+        <textarea name="4° O que você entende sobre o assunto" placeholder="R="></textarea>
        </div>
 
     <div class="question">
         <strong>5° Na sua opinião, o Marketing é uma boa área trabalhista e tem retorno lucrativo? Por que?</strong>
-        <textarea name="5° Na sua opinião, o Marketing é uma boa área trabalhista e tem retorno lucrativo? Por que:" placeholder="R="></textarea>
+        <textarea name="5° Na sua opinião, o Marketing é uma boa área trabalhista
+        e tem retorno lucrativo? Por que" placeholder="R="></textarea>
     </div>
 
     <div class="question">
         <strong>6° Na área do Marketing é necessário que o profissional saiba negociar, o que você entende de negociação?</strong>
-        <textarea name="6° Na área do Marketing é necessário que o profissional saiba negociar, o que você entende de negociação:" placeholder="R="></textarea>
+        <textarea name="6° Na área do Marketing é
+        necessário que o profissional
+        saiba negociar, 
+        o que você entende de negociação" placeholder="R="></textarea>
     </div>
 
     <div class="question">
