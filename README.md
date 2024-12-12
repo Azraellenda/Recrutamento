@@ -51,9 +51,7 @@
             color: #800080; /* Roxo neon escuro */
             margin: 0;
             padding: 20px;
-            background-image: url('https://i.ibb.co/QrJfj7f/e7988c111eec3277b549640a86d21330.jpg'); /* Substitua pela URL da sua imagem */
             background-repeat: repeat; /* A imagem se repete */
-            background-size: cover; /* A imagem cobre toda a área */
         }
         h1 {
             text-align: center;
