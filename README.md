@@ -145,8 +145,7 @@
 
     <div class="question">
         <strong>7° A tecnologia tem ajudado o mundo?Se sim, de que forma?</strong>
-        <textarea name="7° A tecnologia tem ajudado o mundo,
-        Se sim de que forma" placeholder="R="></textarea>
+        <textarea name="7° A tecnologia tem ajudado o mundo,Se sim de que forma" placeholder="R="></textarea>
     </div>
 
     <div class="question">
